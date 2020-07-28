@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::paginate(10);
-
+        
         return view('admin.products', compact('products'));
     }
 
@@ -28,14 +28,15 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $path = $request->file('image')->store('images');
+        $path = ($request->image != null) ? $request->file('image')->store('images'): null;
 
         $product = Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
             'image' => $path,
-            'active' => $request->active
+            'active' => $request->active,
+            'banner' => $request->banner
         ]);
 
         if ($product) {
@@ -66,7 +67,8 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'description' => $request->description,
                 'image' => $path,
-                'active' => $request->active
+                'active' => $request->active,
+                'banner' => $request->banner
             ]);
 
             return redirect()->route('admin.produtos');

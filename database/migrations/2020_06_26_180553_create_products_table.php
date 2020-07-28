@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->decimal('price', 8, 2)->default(0);
             $table->string('image')->nullable();
             $table->enum('active', ['Y','N'])->default('Y');
+            $table->boolean('banner')->nullable();
             $table->timestamps();
         });
     }

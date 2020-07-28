@@ -2,18 +2,16 @@
 
 @section('content')
 
-
-
 <div class="container">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
-            @forelse ($products as $key=>$item)
+            @forelse ($banners as $key=>$item)
             <div class="{{ ($key == 0) ? 'carousel-item active' : 'carousel-item'  }}">
-                <img class="d-block w-25 mx-auto" src="{{ asset("storage/{$item->image}") }}" alt="Primeiro Slide">
+                <img class="d-block w-50 mx-auto" src="{{ asset("storage/{$item->image}") }}" alt="{{ $item->title }}">
             </div>
             @empty
             <div class="carousel-item active">
-            <img class="d-block w-100 mx-auto" src="{{ asset('site_images/wild.jpg')}}" alt="Primeiro Slide">
+                <img class="d-block w-100 mx-auto" src="{{ asset('site_images/wild.jpg')}}" alt="Sem imagem">
             </div>
             @endforelse
         </div>

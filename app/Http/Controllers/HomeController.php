@@ -27,8 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::where(['active' => 'Y'])->paginate(15);
+        $banners = Product::where('banner', true)->get();
         
-        return view('home.index', compact('products'));
+        return view('home.index', compact('products','banners'));
     }
 
     public function product($id = null)
