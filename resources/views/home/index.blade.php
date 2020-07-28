@@ -13,7 +13,7 @@
             </div>
             @empty
             <div class="carousel-item active">
-            <img class="d-block w-25 mx-auto" src="{{ asset('site_images/wild.jpg')}}" alt="Primeiro Slide">
+            <img class="d-block w-100 mx-auto" src="{{ asset('site_images/wild.jpg')}}" alt="Primeiro Slide">
             </div>
             @endforelse
         </div>
