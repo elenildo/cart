@@ -23,7 +23,8 @@
       <div class="col-12">
         <div class="painel produto-detalhe">
             <h4>Detalhes</h4>
-            <p>{{ $product->description }}</p>
+            <p>{!! $product->description !!}</p>
+            
         </div>
       </div>
     </div>

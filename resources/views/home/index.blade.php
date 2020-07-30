@@ -4,6 +4,11 @@
 
 <div class="container">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            @foreach ($banners as $key=>$item)
+            <li data-target="#carouselExampleFade" data-slide-to="{{$key}}"></li>
+            @endforeach
+        </ol>
         <div class="carousel-inner">
             @forelse ($banners as $key=>$item)
             <div class="{{ ($key == 0) ? 'carousel-item active' : 'carousel-item'  }}">

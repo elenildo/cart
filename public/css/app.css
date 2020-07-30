@@ -653,8 +653,8 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -5px;
+  margin-left: -5px;
 }
 
 .no-gutters {
@@ -740,8 +740,8 @@ pre code {
 .col-1 {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .col {
@@ -6700,7 +6700,7 @@ a.close.disabled {
 .carousel {
   position: relative;
   border: 1px solid #ddd;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
 }
 
 .carousel.pointer-event {
@@ -6840,7 +6840,7 @@ a.close.disabled {
 .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -34px;
   left: 0;
   z-index: 15;
   display: flex;
@@ -6855,12 +6855,12 @@ a.close.disabled {
   box-sizing: content-box;
   flex: 0 1 auto;
   width: 30px;
-  height: 3px;
+  height: 5px;
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #69abda;
   background-clip: padding-box;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
@@ -10941,7 +10941,7 @@ table {
   text-align: center;
   border: 1px solid #ddd;
   padding: 5px;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
 }
 
 .oferta a{
@@ -10958,8 +10958,8 @@ table {
 }
 
 .oferta .imagem img{
-  width: 240px;
-  height: 180px;
+  width: 90%;
+  height: 90%;
 }
 
 .oferta h5{
@@ -10977,7 +10977,7 @@ table {
 
 .painel{
   padding: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
   background: white;
   border: 1px solid #ddd;
 }
@@ -10990,6 +10990,10 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.detalhe-imagens img{
+  width: 80%;
 }
 
 .produto-detalhe p{
