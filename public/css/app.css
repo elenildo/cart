@@ -6712,6 +6712,7 @@ a.close.disabled {
   width: 100%;
   overflow: hidden;
   background: rgba(255, 255, 255, 1);
+  padding: 20px 0;
 }
 
 .carousel-inner::after {
@@ -6840,7 +6841,7 @@ a.close.disabled {
 .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: -34px;
+  bottom: -18px;
   left: 0;
   z-index: 15;
   display: flex;
