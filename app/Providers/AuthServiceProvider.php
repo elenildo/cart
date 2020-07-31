@@ -6,6 +6,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Illuminate\Support\Facades\Gate;
 use App\Permission;
 use App\User;
+use Log;
 // use Illuminate\Support\Facades\Auth;
 
 class AuthServiceProvider extends ServiceProvider
@@ -24,16 +25,22 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(User $user)
+    public function boot()
     {
         $this->registerPolicies();
 
-        $permissions = Permission::with('roles')->get();
+        try {
+            $permissions = Permission::with('roles')->get();
 
-        foreach ($permissions as $permission){
-            Gate::define($permission->name, function (User $user) use ($permission){
-                return $user->hasPermission($permission);
-            });
+            foreach ($permissions as $permission){
+                Gate::define($permission->name, function (User $user) use ($permission){
+                    return $user->hasPermission($permission);
+                });
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+            return false;
         }
+       
     }
 }
