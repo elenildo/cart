@@ -49,6 +49,10 @@ class RoleController extends Controller
         $role = Role::find($id);
         $allPermissions = Permission::all();
 
+        if (!Auth::user()->isAdmin() && $id == 1){
+            return redirect()->route('admin.papeis');
+        }
+
         return view('admin.role', compact('role','allPermissions'));
     }
 

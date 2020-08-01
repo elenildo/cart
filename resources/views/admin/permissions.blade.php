@@ -31,9 +31,10 @@
         </div>
         <button class="btn btn-success float-right">Salvar</button>
       </form>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" title="Adicionar Permissão">
-        +
-      </button>
+      @if(Auth::user()->isAdmin())
+      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" 
+        title="Adicionar Permissão">+</button>
+      @endif
     </div>
   </div>
 </div>

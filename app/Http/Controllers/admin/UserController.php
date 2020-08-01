@@ -69,11 +69,9 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $allRoles = Auth::user()->isAdmin()? Role::all() : Role::where('id', '<>', 1)->get();
-
-        if (!is_null($user) && $user->isAdmin()){
-            if (Auth::user()->id != (int)$id ){
-                return redirect()->route('admin.usuarios');
-            }
+        
+        if (Auth::user()->roles()->orderBy('id')->first()->id >= $user->roles()->orderBy('id')->first()->id && Auth::user()->id != (int)$id ){
+            return redirect()->route('admin.usuarios');
         }
     
         return view('admin.user', compact('user','allRoles'));
